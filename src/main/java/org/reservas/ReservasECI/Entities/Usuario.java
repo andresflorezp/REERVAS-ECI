@@ -1,22 +1,30 @@
 package org.reservas.ReservasECI.Entities;
 
-import java.util.Objects;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Usuario")
+@Table(name = "usuario")
 public class Usuario {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private String correo;
 	private String nombre;
 	private String apellido;
-	private String Correo;
 	private String contrasena;
+	private String rol;
+	public Usuario(){}	
+
+
+	public String getRol() {
+		return rol;
+	}
+
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+
 
 	public String getNombre() {
 		return nombre;
@@ -35,11 +43,11 @@ public class Usuario {
 	}
 
 	public String getCorreo() {
-		return Correo;
+		return correo;
 	}
 
 	public void setCorreo(String correo) {
-		Correo = correo;
+		this.correo = correo;
 	}
 
 	public String getContrasena() {
@@ -50,11 +58,4 @@ public class Usuario {
 		this.contrasena = contrasena;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 }

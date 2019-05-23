@@ -17,15 +17,29 @@ public class UsuarioService {
 		per.save(user);
 	}
 
-
-
 	public List<Usuario> getAllUsuarios() {
-		// TODO Auto-generated method stub
 		List<Usuario> users = new ArrayList<Usuario>();
 		Iterable<Usuario> usersa =per.findAll();
 		for(Usuario u:usersa) {
 			users.add(u);
-			
+		}
+		return users;
+	}
+
+	public List<Usuario> getAllUsuariosProfesor() {
+		List<Usuario> users = new ArrayList<Usuario>();
+		Iterable<Usuario> usersa =per.findAll();
+		for(Usuario u:usersa) {
+			if(u.getRol().equals("profesor"))users.add(u);
+		}
+		return users;
+	}
+
+	public List<Usuario> getAllUsuariosAdmin() {
+		List<Usuario> users = new ArrayList<Usuario>();
+		Iterable<Usuario> usersa =per.findAll();
+		for(Usuario u:usersa) {
+			if(u.getRol().equals("admin"))users.add(u);
 		}
 		return users;
 	}

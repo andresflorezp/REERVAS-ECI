@@ -23,12 +23,29 @@ public class ControllerReservas {
 
 	@Autowired
 	UsuarioService ser;
+	
 	@CrossOrigin
 	@GetMapping
 	public ResponseEntity<?> getAllUsers() {
 		if (ser.getAllUsuarios().size() == 0)
 			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
 		return new ResponseEntity<>(ser.getAllUsuarios(), HttpStatus.ACCEPTED);
+	}
+
+	@CrossOrigin
+	@GetMapping("/all-profe")
+	public ResponseEntity<?> getAllUsersProfe() {
+		if (ser.getAllUsuariosProfesor().size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(ser.getAllUsuariosProfesor(), HttpStatus.ACCEPTED);
+	}
+
+	@CrossOrigin
+	@GetMapping("/all-admin")
+	public ResponseEntity<?> getAllUsersAdmin() {
+		if (ser.getAllUsuariosAdmin().size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(ser.getAllUsuariosAdmin(), HttpStatus.ACCEPTED);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/usuario")
