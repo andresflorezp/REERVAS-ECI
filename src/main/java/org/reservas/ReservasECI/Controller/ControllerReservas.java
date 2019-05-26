@@ -3,7 +3,9 @@ package org.reservas.ReservasECI.Controller;
 import java.util.List;
 
 import org.reservas.ReservasECI.Entities.Usuario;
+import org.reservas.ReservasECI.Entities.software;
 import org.reservas.ReservasECI.Service.UsuarioService;
+import org.reservas.ReservasECI.Service.softwareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ public class ControllerReservas {
 
 	@Autowired
 	UsuarioService ser;
+
+	@Autowired
+	softwareService per;
 	
 	@CrossOrigin
 	@GetMapping
@@ -64,6 +69,46 @@ public class ControllerReservas {
 		try {
 			ser.addUser(user);
 			return new ResponseEntity<>(HttpStatus.CREATED);
+		} catch (Exception ex) {
+
+			return new ResponseEntity<>("No es posible crear el recurso", HttpStatus.FORBIDDEN);
+		}
+
+	}
+
+	/**
+	 * 
+	 * 
+	 * Controller para sala
+	 */
+	@CrossOrigin
+	@GetMapping("/software/{sala}")
+	public ResponseEntity<?> getSoftwareBySala(@PathVariable("sala") String sala) {
+		if (per.getSoftwarerBySala(sala).size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(per.getSoftwarerBySala(sala), HttpStatus.ACCEPTED);
+	}
+
+
+	@RequestMapping(method = RequestMethod.POST, value = "/add-software")
+	@ResponseBody
+	public ResponseEntity<?> manejadorCreateSoftware(@RequestBody software soft) {
+		try {
+			per.addSoftware(soft);
+			return new ResponseEntity<>(HttpStatus.CREATED);
+		} catch (Exception ex) {
+
+			return new ResponseEntity<>("No es posible crear el recurso", HttpStatus.FORBIDDEN);
+		}
+
+	}
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "/delete-software/{id}")
+	@ResponseBody
+	public ResponseEntity<?> manejadorDeleteSoftware(@PathVariable("id") Long id) {
+		try {
+			per.deleteSoftware(id);
+			return new ResponseEntity<>(HttpStatus.ACCEPTED);
 		} catch (Exception ex) {
 
 			return new ResponseEntity<>("No es posible crear el recurso", HttpStatus.FORBIDDEN);
