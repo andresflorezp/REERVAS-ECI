@@ -1,6 +1,5 @@
 package org.reservas.ReservasECI.Controller;
 
-
 import java.util.List;
 
 import org.reservas.ReservasECI.Entities.Usuario;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @CrossOrigin
 @RestController
@@ -31,7 +31,17 @@ public class ControllerReservas {
 			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
 		return new ResponseEntity<>(ser.getAllUsuarios(), HttpStatus.ACCEPTED);
 	}
+	
 
+	@CrossOrigin
+	@GetMapping("/userByCorreo/{correo}")
+	public ResponseEntity<?> getUserCorreo(@PathVariable("correo") String correo) {
+		if (ser.getUserByCorreo(correo)==null)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(ser.getUserByCorreo(correo), HttpStatus.ACCEPTED);
+	}
+
+	
 	@CrossOrigin
 	@GetMapping("/all-profe")
 	public ResponseEntity<?> getAllUsersProfe() {

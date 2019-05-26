@@ -35,6 +35,14 @@ public class UsuarioService {
 		return users;
 	}
 
+	public Usuario getUserByCorreo(String correo) {
+		List<Usuario> users = new ArrayList<Usuario>();
+		Iterable<Usuario> usersa =per.findAll();
+		for(Usuario u:usersa) {
+			if(u.getCorreo().equals(correo))return u;
+		}
+		return null;
+	}
 	public List<Usuario> getAllUsuariosAdmin() {
 		List<Usuario> users = new ArrayList<Usuario>();
 		Iterable<Usuario> usersa =per.findAll();

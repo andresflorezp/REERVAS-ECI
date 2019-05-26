@@ -1,13 +1,9 @@
 
 
+
+
     <!DOCTYPE html>
-    <!--
-    Template Name: Nonuxor
-    Author: <a href="https://www.os-templates.com/">OS Templates</a>
-    Author URI: https://www.os-templates.com/
-    Licence: Free to use under our free template licence terms
-    Licence URI: https://www.os-templates.com/template-terms
-    -->
+
     <html>
 
     <head>
@@ -15,10 +11,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="layout/styles/layout2.css" rel="stylesheet" type="text/css" media="all">
-        <link rel="stylesheet" href="css/style.css">	
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body id="top">
@@ -60,39 +56,48 @@
         <div class="wrapper row3">
             <main class="hoc container clear">
                 <!-- main body -->
+                <h2>Create User</h2>
                 <!-- ################################################################################################ -->
                 <div class="content">
                     <!-- ################################################################################################ -->
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3 md-form">
+                                <label for="validationDefault22">First name</label>
+                                <input type="text" class="form-control" id="name-c-user" value="" required>
+                            </div>
+                            <div class="col-md-4 mb-3 md-form">
+                                <label for="validationDefault22">Last name</label>
+                                <input type="text" class="form-control" id="lastname-c-user" value="" required>
+                            </div>
+                            <div class="col-md-4 mb-3 md-form">
+                                <label for="validationDefaultUsername22">Email</label>
+                                <input type="email" class="form-control" id="email-c-user" aria-describedby="inputGroupPrepend23" required>
+                            </div>
 
-                    <!-- ################################################################################################ -->
-                    <div class="container">
-                        <div class="modal-dialog text-center">
-                            <div class="col-sm-9 main-section">
-                                <div class="modal-content">
-                                    <div class="col-12 user-img">
-                                        <img style="width:200px;height: 200px;" src="images/demo/backgrounds/face.png">
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3 md-form">
+                                <label for="validationDefaultUsername22">Password</label>
+                                <input type="password" class="form-control" id="password-c-user" aria-describedby="inputGroupPrepend23" required>
+                            </div>
+                            <div class="col-md-4 mb-3 md-form">
+                                <label for="validationDefaultUsername22">Role</label>
+                                <select class="custom-select browser-default" id="role-c-user" required>
 
-                                    </div>
-                                    <div class="col-12 form-input">
-                                        <form>
-                                            <div class="form-group">
+                                    <option value="admin">Administrator</option>
+                                    <option value="profesor">Profesor</option>
 
-                                                <input type="email" class="form-control" id="email-in" placeholder="Enter Email">
-                                            </div>
-                                            <div class="form-group">
+                                </select>
 
-                                                <input type="password" class="form-control" id="pass-in" placeholder="Enter Password">
-                                            </div>
-                                            <input type="subbmit" class="btn btn-success" style="background-color:#2ECC40" value="Login" onclick="veriLog()" />
-                                            <br><br>
-                                        </form>
-                                    </div>
 
-                                </div>
                             </div>
                         </div>
 
-                    </div>
+                        <input class="btn btn-primary btn-sm" onclick="createUser()" type="submit">
+                    </form>
+                    <!-- ################################################################################################ -->
+
                 </div>
                 <!-- ################################################################################################ -->
                 <!-- / main body -->
@@ -176,8 +181,8 @@
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+        <script src="js/admin.js"></script>
         <!-- JAVASCRIPTS -->
-	<script src="js/main.js"></script>
         <script src="../layout/scripts/jquery.min.js"></script>
         <script src="../layout/scripts/jquery.backtotop.js"></script>
         <script src="../layout/scripts/jquery.mobilemenu.js"></script>
