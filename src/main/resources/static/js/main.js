@@ -7,13 +7,11 @@ function veriLog() {
             var userL = response.data
             if (userL.contrasena === password_user) {
                 if (userL.rol == 'admin') {
-                    window.location.assign('crear_usuario.html')
+                    window.location.assign('home_admin.html')
                 } else {
-                    window.location.assign('home.html')
+                    window.location.assign('home_profesor.html')
                 }
-
             }
-
         })
         .catch(function(error) {
             alert('El usuario no existe')

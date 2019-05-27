@@ -47,7 +47,7 @@ function loadSala(sala) {
 
 
 function actulizarCookie(sala) {
-
+    alert()
     Cookies.set('sala-actual', sala);
     window.location.assign('anadirSoftware.html')
 
