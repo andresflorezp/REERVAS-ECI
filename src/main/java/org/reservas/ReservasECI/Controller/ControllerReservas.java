@@ -104,7 +104,6 @@ public class ControllerReservas {
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "/delete-software/{id}")
-	@ResponseBody
 	public ResponseEntity<?> manejadorDeleteSoftware(@PathVariable("id") Long id) {
 		try {
 			per.deleteSoftware(id);
