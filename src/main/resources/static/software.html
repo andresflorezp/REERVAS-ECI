@@ -26,12 +26,14 @@ Licence URI: https://www.os-templates.com/template-terms
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/llenarSoftware.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
 
 </head>
 
-<body id="top">
+<body id="top" onload="loadSala('software');">
     <style>
         #more {
             color: green
@@ -41,6 +43,7 @@ Licence URI: https://www.os-templates.com/template-terms
             color: yellowgreen
         }
     </style>
+
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
@@ -85,7 +88,7 @@ Licence URI: https://www.os-templates.com/template-terms
 
     <div class="container" align="center" style="margin:0px auto;padding: 0px auto;border: 0px auto">
 
-        <a style="margin:0 auto;padding: 0 auto;border: 0 auto" id="more" href="#"><i  class="icon fa fa-plus "><h5>Nuevo Software</h5></i> </a>
+        <a style="margin:0 auto;padding: 0 auto;border: 0 auto" id="more" href="javascript:actulizarCookie(software)"><i  class="icon fa fa-plus "><h5>Nuevo Software</h5></i> </a>
 
     </div>
 
@@ -95,50 +98,6 @@ Licence URI: https://www.os-templates.com/template-terms
     <div class="wrapper row3 " style="margin-top: 0px;padding-top: 0px;border-top: 0px ">
 
         <main class="hoc container clear " style="margin-top: 0px;padding-top: 0px;border-top: 0px ">
-            <div class="card ">
-                <div class="card-body ">
-                    <h3 class="card-title ">Nombre Software</h3>
-                    <h6 class="card-subtitle mb-2 text-muted ">Version o Distribucion</h6>
-                    <p class="card-text ">Reseña Software...................</p>
-                    <input class="btn btn-danger " action=" " type="submit " value="Eliminar ">
-                    <input class="btn btn-warning " action=" " type="submit " value="Actualizar ">
-
-                </div>
-            </div>
-            <br><br>
-            <div class="card ">
-                <div class="card-body ">
-                    <h3 class="card-title ">Nombre Software</h3>
-                    <h6 class="card-subtitle mb-2 text-muted ">Version o Distribucion</h6>
-                    <p class="card-text ">Reseña Software...................</p>
-                    <input class="btn btn-danger " action=" " type="submit " value="Eliminar ">
-                    <input class="btn btn-warning " action=" " type="submit " value="Actualizar ">
-
-                </div>
-            </div>
-            <br><br>
-            <div class="card ">
-                <div class="card-body ">
-                    <h3 class="card-title ">Nombre Software</h3>
-                    <h6 class="card-subtitle mb-2 text-muted ">Version o Distribucion</h6>
-                    <p class="card-text ">Reseña Software...................</p>
-                    <input class="btn btn-danger " action=" " type="submit " value="Eliminar ">
-                    <input class="btn btn-warning " action=" " type="submit " value="Actualizar ">
-
-                </div>
-            </div>
-            <br><br>
-            <div class="card ">
-                <div class="card-body ">
-                    <h3 class="card-title ">Nombre Software</h3>
-                    <h6 class="card-subtitle mb-2 text-muted ">Version o Distribucion</h6>
-                    <p class="card-text ">Reseña Software...................</p>
-                    <input class="btn btn-danger " action=" " type="submit " value="Eliminar ">
-                    <input class="btn btn-warning " action=" " type="submit " value="Actualizar ">
-
-                </div>
-            </div>
-            <br><br>
 
 
             <div class="clear "></div>

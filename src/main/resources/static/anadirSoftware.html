@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!--
-    Template Name: Nonuxor
-    Author: <a href="https://www.os-templates.com/">OS Templates</a>
-    Author URI: https://www.os-templates.com/
-    Licence: Free to use under our free template licence terms
-    Licence URI: https://www.os-templates.com/template-terms
-    -->
+
+
+
+
 <html>
 
 <head>
@@ -13,12 +10,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/llenarSoftware.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="layout/styles/layout2.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/llenarSoftware.js"></script>
 </head>
 
 <body id="top">
@@ -60,77 +57,32 @@
     <div class="wrapper row3">
         <main class="hoc container clear">
             <!-- main body -->
+            <h2>Crear Software</h2>
             <!-- ################################################################################################ -->
             <div class="content">
-                <div class="card-deck">
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" style="height: 218px" src="images/software.jpg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Ingenieria de Software</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="software.html" class="btn btn-primary">See More</a>
+                <!-- ################################################################################################ -->
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3 md-form">
+                            <label for="validationDefault22">Nombre</label>
+                            <input type="text" class="form-control" id="name-c-software" value="" required>
                         </div>
-                    </div>
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" style="height: 218px" src="images/multimedia.jpg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Multimedia y Moviles</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="multimedia.html" class="btn btn-primary">See More</a>
+                        <div class="col-md-4 mb-3 md-form">
+                            <label for="validationDefault22">Version</label>
+                            <input type="text" class="form-control" id="version-c-software" value="" required>
                         </div>
+
                     </div>
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" style="height: 218px" src="images/plataformas.jpg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Plataformas Computacionales</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="plataformas.html" class="btn btn-primary">See More</a>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-5 md-form">
+                            <label for="validationDefaultUsername22">Descripcion</label>
+                            <textarea type="text" class="form-control" id="descripcion-c-software" aria-describedby="inputGroupPrepend23" required>
                         </div>
                     </div>
 
-                </div>
-                <br><br>
-                <div class="card-deck">
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" style="height: 218px" src="images/redes.jpg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Redes de Computadores</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="redes.html" class="btn btn-primary">See More</a>
-                        </div>
-                    </div>
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" style="height: 218px" src="images/inteligente.jpg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Aula Inteligente</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="inteligente.html" class="btn btn-primary">See More</a>
-                        </div>
-                    </div>
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" style="height: 218px" src="images/fundamentos_de_computacion.jpg" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Fundamentos de Computacion</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="fundamentos.html" class="btn btn-primary">See More</a>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <br><br>
-                <div class="card-deck" align=center>
-                    <div class="card" style="width:400px">
-                        <img class="card-img-top" src="images/videoJuegos.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Laboratorio de Videojuegos</h4>
-                            <p class="card-text">Some example text.</p>
-                            <a href="videojuegos.html" class="btn btn-primary">See More</a>
-                        </div>
-                    </div>
-
-                </div>
+                    <input class="btn btn-primary btn-sm" onclick="anadirSoftware()" type="Adicionar Software">
+                </form>
+                <!-- ################################################################################################ -->
 
             </div>
             <!-- ################################################################################################ -->
@@ -179,15 +131,18 @@
                     <li>
                         <article>
                             <h2 class="nospace font-x1"><a href="#">Quam fusce cursus</a></h2>
-                            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April
+                            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup>
+                                    April
                                     2045</time>
-                            <p class="nospace">Blandit eleifend maximus class aptent taciti sociosqu litora&hellip;</p>
+                            <p class="nospace">Blandit eleifend maximus class aptent taciti sociosqu litora&hellip;
+                            </p>
                         </article>
                     </li>
                     <li>
                         <article>
                             <h2 class="nospace font-x1"><a href="#">Massa amet aliquam</a></h2>
-                            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April
+                            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup>
+                                    April
                                     2045</time>
                             <p class="nospace">Per conubia nostra inceptos himenaeos etiam quis lacus&hellip;</p>
                         </article>
@@ -212,10 +167,11 @@
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+    <script src="js/admin.js"></script>
     <!-- JAVASCRIPTS -->
     <script src="../layout/scripts/jquery.min.js"></script>
     <script src="../layout/scripts/jquery.backtotop.js"></script>
     <script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 
-</html>
+</html>()
