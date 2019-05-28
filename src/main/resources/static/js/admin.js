@@ -16,7 +16,7 @@ function createUser() {
             alert("Se adiciono el usuario")
         })
         .catch(function(error) {
-            alert
+
             console.log(error + ' No se logro hacer post')
         })
 }
