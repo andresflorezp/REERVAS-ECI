@@ -128,6 +128,158 @@ function salto(reservas_dates, Matriz) {
             }
             console.log("Matriz")
             console.log(Matriz)
+            var S = ""
+                //$("#table-reserva").append("<tr><th scope='row'>7:00</th>")
+
+            S += "<tr><th scope='row'>7:00</th>";
+            for (var i1 = 0; i1 < 7; i1++) {
+                console.log(Matriz[0][i1])
+                if (Matriz[0][i1] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[0][i1] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[0][i1] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+                //$("#table-reserva").append(S)
+            S += "<tr><th scope='row'>8:30</th>";
+            for (var i2 = 0; i2 < 7; i2++) {
+                console.log(Matriz[1][i2])
+                if (Matriz[1][i2] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[1][i2] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[1][i2] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>10:00</th>";
+            for (var i3 = 0; i3 < 7; i3++) {
+                console.log(Matriz[1][i3])
+                if (Matriz[2][i3] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[2][i3] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[2][i3] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>11:30</th>";
+            for (var i4 = 0; i4 < 7; i4++) {
+                console.log(Matriz[1][i4])
+                if (Matriz[3][i4] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[3][i4] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[3][i4] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>1:00</th>";
+            for (var i5 = 0; i5 < 7; i5++) {
+                console.log(Matriz[1][i4])
+                if (Matriz[4][i5] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[4][i5] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[4][i5] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>2:30</th>";
+            for (var i6 = 0; i6 < 7; i6++) {
+                console.log(Matriz[1][i5])
+                if (Matriz[5][i6] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[5][i6] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[5][i6] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>4:00</th>";
+            for (var i7 = 0; i7 < 7; i7++) {
+                console.log(Matriz[1][i7])
+                if (Matriz[6][i7] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[6][i7] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[6][i7] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>5:30</th>";
+            for (var i8 = 0; i8 < 7; i8++) {
+                console.log(Matriz[1][i8])
+                if (Matriz[7][i8] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[7][i8] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[7][i8] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            S += "<tr><th scope='row'>7:0</th>";
+            for (var i9 = 0; i9 < 7; i9++) {
+                console.log(Matriz[1][i9])
+                if (Matriz[8][i9] == 2) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Puedes Reservar" class="btn btn-success"><i class="fa fa-check"></i></button></td>'
+
+                } else if (Matriz[8][i9] == 1) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="Alguien ya reservo" class="btn btn-danger"><i class="fa fa-close"></i></button></td>'
+
+                } else if (Matriz[8][i9] == 0) {
+                    S += '<td><button style="margin-left: 35px;" data-toggle="modal" data-target="#exampleModal" type="button" title="No tiene el Software" class="btn btn-warning"><i class="fa fa-minus-square-o"></i></button></td>'
+
+                }
+
+            }
+            S += "</tr>"
+            $("#table-reserva").append(S)
+
+
+
         })
         .catch(function(error) {
             alert('El usuario no existe')
@@ -138,6 +290,7 @@ function salto(reservas_dates, Matriz) {
     //LLENADO TABLA
 
     //Llenado de lo tiene alguien por y
+
 
 
 
