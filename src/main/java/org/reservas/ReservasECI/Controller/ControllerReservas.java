@@ -3,8 +3,10 @@ package org.reservas.ReservasECI.Controller;
 import java.util.List;
 
 import org.reservas.ReservasECI.Entities.Usuario;
+import org.reservas.ReservasECI.Entities.reservas;
 import org.reservas.ReservasECI.Entities.software;
 import org.reservas.ReservasECI.Service.UsuarioService;
+import org.reservas.ReservasECI.Service.reservasService;
 import org.reservas.ReservasECI.Service.softwareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +30,9 @@ public class ControllerReservas {
 
 	@Autowired
 	softwareService per;
+
+	@Autowired
+	reservasService res;
 	
 	@CrossOrigin
 	@GetMapping
@@ -105,7 +110,6 @@ public class ControllerReservas {
 			per.addSoftware(soft);
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		} catch (Exception ex) {
-
 			return new ResponseEntity<>("No es posible crear el recurso", HttpStatus.FORBIDDEN);
 		}
 
@@ -122,5 +126,45 @@ public class ControllerReservas {
 		}
 
 	}
+
+
+	/**
+	 * 
+	 * Controller Para reservas
+	 * 
+	 */
+
+
+	@CrossOrigin
+	@GetMapping("/reserva/{dia}/{mes}/{ano}")
+	public ResponseEntity<?> getSoftwareByDate(@PathVariable("dia") String dia,@PathVariable("mes") String mes,@PathVariable("ano") String ano) {
+		if (res.getReservaDiaMesAno(dia, mes, ano).size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(res.getReservaDiaMesAno(dia, mes, ano), HttpStatus.ACCEPTED);
+	}
+
+
+	@CrossOrigin
+	@GetMapping("/all-reservas")
+	public ResponseEntity<?> getAllReservas() {
+		if (res.getAllReservas().size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(res.getAllReservas(), HttpStatus.ACCEPTED);
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/add-reserva")
+	@ResponseBody
+	public ResponseEntity<?> manejadorCreateReserva(@RequestBody reservas rese) {
+		try {
+			res.addReserva(rese);
+			return new ResponseEntity<>(HttpStatus.CREATED);
+		} catch (Exception ex) {
+
+			return new ResponseEntity<>("No es posible crear el recurso", HttpStatus.FORBIDDEN);
+		}
+
+	}
+
+
 
 }

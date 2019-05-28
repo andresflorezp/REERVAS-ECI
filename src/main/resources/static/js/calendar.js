@@ -12,3 +12,12 @@ function llenarSoftware() {
 
         })
 }
+
+function guardaReservas() {
+    var fecha = $("#date_chooice")
+    var chooice_software = $("#all-software")
+    Cookies.set('elec-fecha', fecha);
+    Cookies.set('elec-software', chooice_software)
+    window.location.assign('crear_reserva.html')
+
+}
