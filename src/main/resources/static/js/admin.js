@@ -5,7 +5,7 @@ function createUser() {
     var emailuser = $('#email-c-user').val()
     var roluser = $('#role-c-user').val()
     var passuser = $("#password-c-user").val()
-    axios.post('reservas/archivo', {
+    axios.post('reservas/usuario', {
             nombre: nameuser,
             apellido: lastnameuser,
             contrasena: passuser,

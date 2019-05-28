@@ -7,8 +7,10 @@ function veriLog() {
             var userL = response.data
             if (userL.contrasena === password_user) {
                 if (userL.rol == 'admin') {
+                    Cookies.set('user-cur',correo_user)
                     window.location.assign('home_admin.html')
                 } else {
+                    Cookies.set('user-cur',correo_user)
                     window.location.assign('home_profesor.html')
                 }
             }
