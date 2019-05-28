@@ -90,6 +90,14 @@ public class ControllerReservas {
 	}
 
 
+	@CrossOrigin
+	@GetMapping("/all-software")
+	public ResponseEntity<?> getAllSoftware() {
+		if (per.getAllsoftware().size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(per.getAllsoftware(), HttpStatus.ACCEPTED);
+	}
+
 	@RequestMapping(method = RequestMethod.POST, value = "/add-software")
 	@ResponseBody
 	public ResponseEntity<?> manejadorCreateSoftware(@RequestBody software soft) {
