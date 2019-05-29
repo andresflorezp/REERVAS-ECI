@@ -143,6 +143,14 @@ public class ControllerReservas {
 		return new ResponseEntity<>(res.getReservaDiaMesAno(dia, mes, ano), HttpStatus.ACCEPTED);
 	}
 
+	@CrossOrigin
+	@GetMapping("/reserva/quien/{quien}")
+	public ResponseEntity<?> getReservaByQuien(@PathVariable("quien") String quien) {
+		if (res.getReservaQuien(quien).size() == 0)
+			return new ResponseEntity<>("HTTP 404", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(res.getReservaQuien(quien), HttpStatus.ACCEPTED);
+	}
+
 
 	@CrossOrigin
 	@GetMapping("/all-reservas")

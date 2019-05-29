@@ -33,6 +33,17 @@ public class reservasService {
 		}
 		return reservase;
 	}
+	public List<reservas> getReservaQuien(String quien){
+		List<reservas> reservase = new ArrayList<reservas>();
+		Iterable<reservas> reservasa =per.findAll();
+		for(reservas u:reservasa) {
+            if(u.getQuien().equals(quien) ){
+                reservase.add(u);
+            }
+		}
+		return reservase;
+
+	}
 
 	public void deleteReserva(String dia,String mes,String ano,String hora,String software,String quien,String sala){
 		Iterable<reservas> reservasa =per.findAll();
