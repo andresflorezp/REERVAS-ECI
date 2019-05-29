@@ -165,6 +165,19 @@ public class ControllerReservas {
 
 	}
 
+	@RequestMapping(method = RequestMethod.DELETE, value = "/delete-reserva/{dia}/{mes}/{ano}/{hora}/{software}/{quien}/{sala}")
+	public ResponseEntity<?> manejadorDeleteReserva(@PathVariable("dia") String dia,@PathVariable("mes") String mes,@PathVariable("ano") String ano,@PathVariable("hora") String hora,@PathVariable("software") String software,@PathVariable("quien") String quien,@PathVariable("sala") String sala) {
+		try {
+			System.out.println("SI'PASO POR BORRAR");
+			res.deleteReserva(dia, mes, ano, hora, software, quien, sala);
+			return new ResponseEntity<>(HttpStatus.ACCEPTED);
+		} catch (Exception ex) {
+
+			return new ResponseEntity<>("No es posible crear el recurso", HttpStatus.FORBIDDEN);
+		}
+
+	}
+
 
 
 }

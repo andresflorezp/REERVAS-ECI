@@ -24,13 +24,13 @@ function parsear() {
 
 
     axios.get("/reservas/reserva/" + cdia + "/" + cmes + "/" + cano)
-        .then(function (response) {
+        .then(function(response) {
             let reservas_dates = response.data;
 
             salto(reservas_dates, Matriz)
 
         })
-        .catch(function (error) {
+        .catch(function(error) {
             salto([], Matriz)
             console.log('no hay reserva asociadas')
 
@@ -53,7 +53,7 @@ function salto(reservas_dates, Matriz) {
 
     axios.get("reservas/all-software")
 
-        .then(function (response) {
+    .then(function(response) {
             var datase = response.data;
             console.log(datase)
             for (var m = 0; m < datase.length; m++) {
@@ -104,12 +104,11 @@ function salto(reservas_dates, Matriz) {
 
                         console.log(salas[y])
 
-                        if (horas[t] == reservas_dates[g].hora && salas[y] == reservas_dates[g].sala && Cookies.get('user-cur')==reservas_dates[g].quien) {
+                        if (horas[t] == reservas_dates[g].hora && salas[y] == reservas_dates[g].sala && Cookies.get('user-cur') == reservas_dates[g].quien) {
                             console.log("PASO-----------------")
                             Matriz[t][y] = 4;
 
-                        }
-                        else if (horas[t] == reservas_dates[g].hora && salas[y] == reservas_dates[g].sala && Cookies.get('user-cur')!=reservas_dates[g].quien) {
+                        } else if (horas[t] == reservas_dates[g].hora && salas[y] == reservas_dates[g].sala && Cookies.get('user-cur') != reservas_dates[g].quien) {
                             console.log("PASO-----------------")
                             Matriz[t][y] = 1;
 
@@ -140,7 +139,7 @@ function salto(reservas_dates, Matriz) {
             console.log("Matriz")
             console.log(Matriz)
             var S = ""
-            //$("#table-reserva").append("<tr><th scope='row'>7:00</th>")
+                //$("#table-reserva").append("<tr><th scope='row'>7:00</th>")
 
             S += "<tr><th scope='row'>7:00</th>";
             for (var i1 = 0; i1 < 7; i1++) {
@@ -154,16 +153,15 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[0][i1] == 0) {
                     S += '<td><input id="3-table" type="button" hora="7:00" sala="' + salas[i1] + '" style="margin-left: 35px;"  value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[0][i1] == 4) {
-                    S += '<td><input id="33-table" type="button" hora="7:00" sala="' + salas[i1] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[0][i1] == 4) {
+                    S += '<td><input id="33-table" type="button" hora="7:00" sala="' + salas[i1] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)"  title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
 
             }
             S += "</tr>"
-            //$("#table-reserva").append(S)
+                //$("#table-reserva").append(S)
             S += "<tr><th scope='row'>8:30</th>";
             for (var i2 = 0; i2 < 7; i2++) {
                 console.log(Matriz[1][i2])
@@ -176,9 +174,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[1][i2] == 0) {
                     S += '<td><input id="6-table" type="button" hora="8:30" sala="' + salas[i2] + '"  style="margin-left: 35px;"   value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[1][i2] == 4) {
-                    S += '<td><input id="66-table" type="button" hora="8:30" sala="' + salas[i2] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[1][i2] == 4) {
+                    S += '<td><input id="66-table" type="button" hora="8:30" sala="' + salas[i2] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)" title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -196,9 +193,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[2][i3] == 0) {
                     S += '<td><input id="9-table" type="button" hora="10:00"  sala="' + salas[i3] + '" style="margin-left: 35px;"  value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[2][i3] == 4) {
-                    S += '<td><input id="99-table" type="button" hora="10:00" sala="' + salas[i3] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[2][i3] == 4) {
+                    S += '<td><input id="99-table" type="button" hora="10:00" sala="' + salas[i3] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)" title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -216,9 +212,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[3][i4] == 0) {
                     S += '<td><input id="12-table" type="button" hora="11:30" sala="' + salas[i4] + '" style="margin-left: 35px;"  value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[3][i4] == 4) {
-                    S += '<td><input id="1212-table" type="button" hora="11:30" sala="' + salas[i4] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[3][i4] == 4) {
+                    S += '<td><input id="1212-table" type="button" hora="11:30" sala="' + salas[i4] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)"  title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -236,9 +231,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[4][i5] == 0) {
                     S += '<td><input id="15-table" type="button" hora="1:00" sala="' + salas[i5] + '" style="margin-left: 35px;"  value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[4][i5] == 4) {
-                    S += '<td><input id="1515-table" type="button" hora="1:00" sala="' + salas[i5] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[4][i5] == 4) {
+                    S += '<td><input id="1515-table" type="button" hora="1:00" sala="' + salas[i5] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)"  title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -256,9 +250,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[5][i6] == 0) {
                     S += '<td><input id="18-table" type="button" hora="2:30" sala="' + salas[i6] + '" style="margin-left: 35px;"  value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[5][i6] == 4) {
-                    S += '<td><input id="1818-table" type="button" hora="2:30" sala="' + salas[i6] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[5][i6] == 4) {
+                    S += '<td><input id="1818-table" type="button" hora="2:30" sala="' + salas[i6] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)" title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -276,9 +269,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[6][i7] == 0) {
                     S += '<td><input id="21-table" type="button" hora="4:00" sala="' + salas[i7] + '" style="margin-left: 35px;" value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[6][i7] == 4) {
-                    S += '<td><input id="2121-table" type="button" hora="4:00" sala="' + salas[i7] + '" style="margin-left: 35px;"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[6][i7] == 4) {
+                    S += '<td><input id="2121-table" type="button" hora="4:00" sala="' + salas[i7] + '" style="margin-left: 35px;"  value="&#x2718" onclick="javascript:borrar_reserva(this)" title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -296,9 +288,8 @@ function salto(reservas_dates, Matriz) {
                 } else if (Matriz[7][i8] == 0) {
                     S += '<td><input id="24-table" type="button" hora="5:30" sala="' + salas[i8] + '" style="margin-left: 35px;"   value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
 
-                }
-                else if (Matriz[7][i8] == 4) {
-                    S += '<td><input id="2424-table" type="button" hora="5:30" sala="' + salas[i8] + '" style="margin-left: 35px;"   value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[7][i8] == 4) {
+                    S += '<td><input id="2424-table" type="button" hora="5:30" sala="' + salas[i8] + '" style="margin-left: 35px;" onclick="javascript:borrar_reserva(this)"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -315,9 +306,8 @@ function salto(reservas_dates, Matriz) {
 
                 } else if (Matriz[8][i9] == 0) {
                     S += '<td><input id="27-table" type="button" hora="7:0" sala="' + salas[i9] + '" style="margin-left: 35px;"  value="&#x2706"  title="No tiene el Software" class="btn btn-warning"></td>'
-                }
-                else if (Matriz[8][i9] == 4) {
-                    S += '<td><input id="2727-table" type="button" hora="7:0" sala="' + salas[i9] + '" style="margin-left: 35px;"   value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
+                } else if (Matriz[8][i9] == 4) {
+                    S += '<td><input id="2727-table" type="button" hora="7:0" sala="' + salas[i9] + '" style="margin-left: 35px;" onclick="javascript:borrar_reserva(this)"  value="&#x2718"  title="Cancelar Reserva" class="btn btn-primary"></td>'
 
                 }
 
@@ -328,7 +318,7 @@ function salto(reservas_dates, Matriz) {
 
 
         })
-        .catch(function (error) {
+        .catch(function(error) {
             alert('El usuario no existe')
 
         })
@@ -364,22 +354,55 @@ function generar_reserva(comp) {
     alert(sala_s)
 
     axios.post('reservas/add-reserva', {
-        dia: dia_s,
-        mes: mes_s,
-        ano: ano_s,
-        hora: hora_s,
-        software: software_s,
-        quien: quien_s,
-        sala: sala_s,
-    })
-        .then(function (response) {
+            dia: dia_s,
+            mes: mes_s,
+            ano: ano_s,
+            hora: hora_s,
+            software: software_s,
+            quien: quien_s,
+            sala: sala_s,
+        })
+        .then(function(response) {
             alert("Se realizo la reserva")
             location.reload()
         })
-        .catch(function (error) {
+        .catch(function(error) {
             console.log(error + ' No se logro hacer post')
         })
 
+
+
+
+}
+
+function borrar_reserva(comp2) {
+    DATE = Cookies.get('elec-fecha').split("/")
+    dia_r = DATE[0]
+    mes_r = DATE[1]
+    ano_r = DATE[2]
+    hora_r = $("#" + comp2.id).attr("hora");
+    quien_r = Cookies.get('user-cur')
+    software_r = Cookies.get('elec-software')
+    sala_r = $("#" + comp2.id).attr("sala");
+
+    alert(dia_r)
+    alert(mes_r)
+    alert(ano_r)
+    alert(hora_r)
+    alert(quien_r)
+    alert(software_r)
+    alert(sala_r)
+
+    axios.delete("/reservas/delete-reserva/" + dia_r + "/" + mes_r + "/" + ano_r + "/" + hora_r + "/" + software_r + "/" + quien_r + "/" + sala_r)
+        .then(function(response) {
+            console.log("++++++++--------+++" + response.data)
+            alert("Se logro borrar la reserva")
+            location.reload()
+        })
+        .catch(function(error) {
+            console.log(error + "no se pudo borrar la reserva")
+
+        })
 
 
 

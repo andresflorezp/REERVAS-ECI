@@ -33,4 +33,28 @@ public class reservasService {
 		}
 		return reservase;
 	}
+
+	public void deleteReserva(String dia,String mes,String ano,String hora,String software,String quien,String sala){
+		Iterable<reservas> reservasa =per.findAll();
+		for(reservas u:reservasa) {
+			System.out.println(u.getDia().equals(dia)+"="+dia + "||"+u.getDia());
+			System.out.println(u.getMes().equals(mes)+"="+mes + "||"+u.getMes());
+			System.out.println(u.getAno().equals(ano)+"="+ano + "||"+u.getAno());
+			System.out.println(u.getHora().equals(hora)+"="+hora + "||"+u.getHora());
+			System.out.println(u.getQuien().equals(quien)+"="+quien + "||"+u.getQuien());
+			System.out.println(u.getSala().equals(sala)+"="+sala + "||"+u.getSala());
+			System.out.println(u.getSoftware().equals(software)+"="+software + "||"+u.getSoftware());
+			System.out.println();
+			System.out.println();
+            if(u.getDia().equals(dia) && u.getMes().equals(mes) && u.getAno().equals(ano) && u.getHora().equals(hora) && u.getSoftware().equals(software) && u.getQuien().equals(quien) && u.getSala().equals(sala)){
+				System.out.println(u.getId());
+
+				per.delete(u);
+				
+            }
+		}	
+		System.out.println("pasasasas");	
+
+
+	}
 }
