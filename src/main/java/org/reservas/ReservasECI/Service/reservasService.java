@@ -57,7 +57,7 @@ public class reservasService {
 			System.out.println(u.getSoftware().equals(software)+"="+software + "||"+u.getSoftware());
 			System.out.println();
 			System.out.println();
-            if(u.getDia().equals(dia) && u.getMes().equals(mes) && u.getAno().equals(ano) && u.getHora().equals(hora) && u.getSoftware().equals(software) && u.getQuien().equals(quien) && u.getSala().equals(sala)){
+            if(u.getDia().equals(dia) && u.getMes().equals(mes) && u.getAno().equals(ano) && u.getHora().equals(hora) && u.getQuien().equals(quien) && u.getSala().equals(sala)){
 				System.out.println(u.getId());
 
 				per.delete(u);

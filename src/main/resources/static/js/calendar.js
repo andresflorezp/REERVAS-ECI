@@ -16,11 +16,9 @@ function llenarSoftware() {
 function guardaReservas() {
     var fecha = $("#date_chooice").val()
     var chooice_software = $("#all-software").val()
-    alert(fecha);
-    alert(chooice_software);
     Cookies.set('elec-fecha', fecha);
     Cookies.set('elec-software', chooice_software)
     window.location.replace('crear_reserva.html')
-    alert("stop")
+
 
 }

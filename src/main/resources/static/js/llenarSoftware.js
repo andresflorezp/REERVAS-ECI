@@ -6,7 +6,7 @@
 
 function deleteSoftware(comp) {
     var ident = comp.id;
-    alert(ident)
+
     axios.delete("/reservas/delete-software/" + ident)
         .then(function(response) {
             $("#" + ident + "r").empty()
@@ -24,7 +24,7 @@ function loadSala(sala) {
     axios.get("/reservas/software/" + sala)
         .then(function(response) {
             var software = response.data;
-            console.log(software)
+
             for (var i = 0; i < software.length; i++) {
                 $("#contenido").append('<div id="' + software[i].id + 'r" class="card "><div class="card-body ">' +
                     '<h3 class="card-title ">' + software[i].nombre + '</h3>' +
@@ -47,7 +47,6 @@ function loadSala(sala) {
 
 
 function actulizarCookie(sala) {
-    alert()
     Cookies.set('sala-actual', sala);
     window.location.assign('anadirSoftware.html')
 
@@ -71,7 +70,7 @@ function anadirSoftware() {
         })
         .catch(function(error) {
 
-            console.log(error + ' No se logro adicionar el software')
+            alert(error + ' No se logro adicionar el software')
         })
 
 

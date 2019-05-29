@@ -13,10 +13,11 @@ function createUser() {
             rol: roluser
         })
         .then(function(response) {
-            alert("Se adiciono el usuario")
+            alert("Se creo el usuario")
+            window.location.assign('home_admin.html')
         })
         .catch(function(error) {
 
-            console.log(error + ' No se logro hacer post')
+            console.log(error + ' No se logro adiciona')
         })
 }
